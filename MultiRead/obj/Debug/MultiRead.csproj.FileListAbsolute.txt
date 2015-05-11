@@ -1,6 +1,0 @@
-C:\Users\Josh\Documents\lab\ThreadingExamples\MultiRead\bin\Debug\MultiRead.exe.config
-C:\Users\Josh\Documents\lab\ThreadingExamples\MultiRead\bin\Debug\MultiRead.exe
-C:\Users\Josh\Documents\lab\ThreadingExamples\MultiRead\bin\Debug\MultiRead.pdb
-C:\Users\Josh\Documents\lab\ThreadingExamples\MultiRead\obj\Debug\MultiRead.csprojResolveAssemblyReference.cache
-C:\Users\Josh\Documents\lab\ThreadingExamples\MultiRead\obj\Debug\MultiRead.exe
-C:\Users\Josh\Documents\lab\ThreadingExamples\MultiRead\obj\Debug\MultiRead.pdb

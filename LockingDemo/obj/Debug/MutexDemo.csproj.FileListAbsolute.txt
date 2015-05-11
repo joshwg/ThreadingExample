@@ -1,5 +1,0 @@
-C:\Users\Josh\Documents\lab\ThreadingExamples\MutexDemo\bin\Debug\MutexDemo.exe.config
-C:\Users\Josh\Documents\lab\ThreadingExamples\MutexDemo\bin\Debug\MutexDemo.exe
-C:\Users\Josh\Documents\lab\ThreadingExamples\MutexDemo\bin\Debug\MutexDemo.pdb
-C:\Users\Josh\Documents\lab\ThreadingExamples\MutexDemo\obj\Debug\MutexDemo.exe
-C:\Users\Josh\Documents\lab\ThreadingExamples\MutexDemo\obj\Debug\MutexDemo.pdb
