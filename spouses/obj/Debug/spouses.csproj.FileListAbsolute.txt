@@ -1,0 +1,12 @@
+C:\Users\Josh\Documents\lab\livelock\spouses\bin\Debug\spouses.exe.config
+C:\Users\Josh\Documents\lab\livelock\spouses\bin\Debug\spouses.exe
+C:\Users\Josh\Documents\lab\livelock\spouses\bin\Debug\spouses.pdb
+C:\Users\Josh\Documents\lab\livelock\spouses\obj\Debug\spouses.csprojResolveAssemblyReference.cache
+C:\Users\Josh\Documents\lab\livelock\spouses\obj\Debug\spouses.exe
+C:\Users\Josh\Documents\lab\livelock\spouses\obj\Debug\spouses.pdb
+C:\Users\Josh\Documents\lab\ThreadingExamples\spouses\bin\Debug\spouses.exe.config
+C:\Users\Josh\Documents\lab\ThreadingExamples\spouses\obj\Debug\spouses.exe
+C:\Users\Josh\Documents\lab\ThreadingExamples\spouses\obj\Debug\spouses.pdb
+C:\Users\Josh\Documents\lab\ThreadingExamples\spouses\bin\Debug\spouses.exe
+C:\Users\Josh\Documents\lab\ThreadingExamples\spouses\bin\Debug\spouses.pdb
+C:\Users\Josh\Documents\lab\ThreadingExamples\spouses\obj\Debug\spouses.csprojResolveAssemblyReference.cache
