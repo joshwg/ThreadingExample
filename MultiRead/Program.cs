@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*  A simple demonstration of the .NET 4.5 threading techniques
+ *      Tasks using async/await keywords
+ *      Task.WaitAny
+ *      Parallel extension
+ *      Threadpool
+ */
+
+using System;
 using System.Linq;
 using System.Text;
 using System.Net.Http;
@@ -13,7 +20,13 @@ namespace MultiRead
     {
         static void Main(string[] args)
         {
-            // Run Parallel Reads using async Tasks
+            ParallelIOUsingTasks();
+            ParallelInvoke();
+            UsingAThreadpool();
+        }
+
+        private static void ParallelIOUsingTasks()
+        {
 
             List<Task<string>> tasks = new List<Task<string>>();
 
@@ -35,10 +48,13 @@ namespace MultiRead
                 tasks.RemoveAt(taskIndex);
                 Console.WriteLine(sw.Elapsed.ToString() + ": Task #" + taskIndex + "( ID=" + t.Id + " ) " + t.Result);
             }
+        }
 
+        private static void ParallelInvoke()
+        {
             // Run the same tasks using the Parallel Extension but only allow 2 threads to run at once
             var options = new ParallelOptions { MaxDegreeOfParallelism = 2 };
-            sw = Stopwatch.StartNew();
+            Stopwatch sw = Stopwatch.StartNew();
             Parallel.Invoke(options,
                 () => ReadWebSiteSync(sw, "https://www.google.com"),
                 () => ReadWebSiteSync(sw, "http://www.yahoo.com"),
@@ -48,6 +64,11 @@ namespace MultiRead
 
             Console.WriteLine(sw.Elapsed.ToString() + ": All Parallel Threads Finished");
 
+            
+        }
+
+        private static void UsingAThreadpool()
+        {
             // Run Compute Tasks using the ThreadPool mechanism
             int nTasks = 10;
             ManualResetEvent[] doneEvents = new ManualResetEvent[nTasks];
@@ -67,6 +88,9 @@ namespace MultiRead
             WaitHandle.WaitAll(doneEvents);
             Console.WriteLine("All ComputeTasks have finished");
         }
+
+
+        #region Support Routines
 
         static async Task<string> ReadWebSiteAsync(string url)
         {
@@ -93,10 +117,10 @@ namespace MultiRead
                 + url + " and got " + t.Result.Length + " bytes" );
         }
 
-        
+        #endregion
     }
 
-    public class ComputeTask
+    class ComputeTask
     {
         private int _maxCount;
         private ManualResetEvent _doneEvent;

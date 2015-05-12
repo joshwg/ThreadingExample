@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*  Show the impact of locking on performance when compared to running without locks.
+ * Note that the performance impact of acquiring a lock is greatly overshadowed when
+ * threads are blocked rather than the cost of act of locking
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -34,6 +39,7 @@ namespace LockingDemo
             for (int repetition = 0; repetition < 5; repetition++) {
                 stopwatch.Reset();
                 stopwatch.Start();
+                // Acquire a Monitor 100 million times without contention
                 for (int i = 0; i < LoopCount; i++)
                     lock (stopwatch)
                         counter = i;
@@ -42,6 +48,7 @@ namespace LockingDemo
 
                 stopwatch.Reset();
                 stopwatch.Start();
+                // Get base time for looping and assigning
                 for (int i = 0; i < LoopCount; i++)
                     counter = i;
                 stopwatch.Stop();

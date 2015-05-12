@@ -1,4 +1,11 @@
-﻿using System;
+﻿/* This is a demostration of livelock.
+ * I am not the original author of this code.
+ * This demo is a mild modification on some code I found on the internet.
+ * 
+ * This code runs forever so be prepared to stop it
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -45,6 +52,18 @@ namespace spouses
         }
     }
 
+    /// <summary>
+    /// The crux of this demonstration is that we don't use the resource we have acquired.
+    /// Rather, we are "smart" and release the resource in contention to another task
+    /// which desires it.  The net result is we change state (give the spoon away) but
+    /// never progress
+    /// 
+    /// A parallel example is 2 people trying to pass each other in a narrow
+    /// hallway. Being polite, they move to the side to let the other pass. Assume that
+    /// they both move to the same side, realize that they are still blocking the other person
+    /// and move to the other side to let the other person pass.  Repeat this endlessly and you have livelock.
+    /// Changing state, not waiting, but not progressing.
+    /// </summary>
     public class Diner
     {
         public Diner(string n)
